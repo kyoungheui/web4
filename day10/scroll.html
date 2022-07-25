@@ -47,7 +47,9 @@
                     window.innerHeight <
                     0
                 ) {
-                    scrollAnimation[i].classlist.remove("to-right");
+                    scrollAnimation[i].classList.remove("to-right");
+                } else {
+                    scrollAnimation[i].classList.add("to-right");
                 }
             });
         }
