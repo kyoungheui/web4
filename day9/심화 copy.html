@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            width: 300px;
+            height: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .print {
+            font-size: 56px;
+            font-weight: bold;
+        }
+
+        .count-up-button {
+            width: 250px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="print">0</p>
+        <button class="count-up-button">카운트 멈춤</button>
+    </div>
+
+    <script>
+
+        const print = document.querySelector(".print");
+        let count = 0 ;
+
+        let countUp;
+        countUpStart();
+        const countUpButton = document.querySelector(".count-up-button");
+        countUpButton.addEventListener('click',()=>{
+            if(countUp){
+                clearInterval(countUp);
+                countUp = false;
+                countUpButton.innerText = "카운트 다시 시작";
+            }else{
+                countUpStart();
+                countUpButton.innerText = "카운트 멈춤";
+            }
+        });
+
+        function countUpStart() {
+            countUp = setInterval(() => {
+                count++;
+                print.innerText = count;
+            }, 100);
+        }
+
+
+    </script>
+</body>
+</html>

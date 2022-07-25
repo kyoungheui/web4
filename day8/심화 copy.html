@@ -25,11 +25,13 @@
             count = 4;
         }
         
+
         for(let i= 0; i < count ; i ++) {
-            const input = prompt("정답은 무엇일까요?");
+            const input = Number(prompt("정답은 무엇일까요?"));
             
             if(input === answer) {
                 alert("정답입니다");
+                break;
             } else if (i === 4) {
                 alert(`실패입니다.정답은 ${answer}입니다.`);
             } else if (input > answer) {

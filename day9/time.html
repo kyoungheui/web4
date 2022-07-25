@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    타이머를 만들거나 일정 시간마다 반복되게 하거나
+    어쨋든, 시간과 관련된 동작을 시키고 싶을때
+
+    setTimeout(실행할 함수, 딜레이(ms)) : 일정 시간뒤에 동작시키다.
+    setInterval(실행할 함수, 딜레이(ms)) : 일정 시간마다 동작시키다.
+
+    위 두 함수를 이용 할 수 있다.
+
+    <script>
+
+        setTimeout(() => {
+            document.write("5초가 지났다.")
+        }, 5000);
+
+        // 안되는 예문
+        for(let i = 0; i <10 ; i++) {
+            setTimeout(() => {
+                console.log(`${i}초가 지났다.`);
+            }, 1000 * i );
+        }
+    </script>
+</body>
+</html>
