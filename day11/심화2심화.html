@@ -26,19 +26,18 @@
       const bottomButton = document.getElementById("bottom");
 
       topButton.addEventListener("click", () => {
-        const nowDate = new Date();
-        const makePTage = document.createElement("p");
-        const pTagInner = document.createTextNode(
-          `현재 시각은 ${nowDate.getHours()}시 ${nowDate.getMinutes()}분입니다.`
-        );
-        makePTage.appendChild(pTagInner);
-
         const container = document.querySelector(".container");
 
-        container.insertBefore(makePTage, container.firstChild);
+        container.insertBefore(makeP(), container.firstChild);
       });
 
       bottomButton.addEventListener("click", () => {
+        const container = document.querySelector(".container");
+
+        container.appendChild(makeP());
+      });
+
+      function makeP() {
         const nowDate = new Date();
         const makePTage = document.createElement("p");
         const pTagInner = document.createTextNode(
@@ -46,10 +45,8 @@
         );
         makePTage.appendChild(pTagInner);
 
-        const container = document.querySelector(".container");
-
-        container.appendChild(makePTage);
-      });
+        return makePTage;
+      }
     </script>
   </body>
 </html>
