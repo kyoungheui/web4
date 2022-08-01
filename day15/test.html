@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="내용">
+    <button id="click">여길 누르면 읽어줌</button>
+    <script>
+        const 내용 = document.getElementById("내용");
+        const 클릭 = document.getElementById("click");
+
+        클릭.addEventListener("click", ()=> {
+            TTS(내용);
+        });
+
+        function TTS(내용) {
+            alert(내용.value);
+        }
+    </script>
+</body>
+</html>
